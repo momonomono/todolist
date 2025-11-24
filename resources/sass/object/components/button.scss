@@ -1,0 +1,13 @@
+.c-button {
+    &__main {
+        padding: 10px 30px;
+        border-radius: 5px;
+        border: none;
+        background-color: #67bdf7;
+        color: #ffffff;
+        
+        &:hover {
+            background-color: #559ed6;
+        }
+    }
+}

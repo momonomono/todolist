@@ -1,0 +1,16 @@
+.p-form {
+    &__text {
+        width: 300px;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid #3a1107;
+        outline:  none;
+        padding-left: 10px;
+        box-sizing: border-box;
+
+        &:focus {
+            background-color: #e0eafa;
+            transition: all 0.8s ease;
+        }
+    }
+}

@@ -1,18 +1,14 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Form from './pages/form.jsx';
 
-const App = () => {
-    return (
-        <div>
-            <input type="text" />
-            <button>追加</button>
-        </div>
-    );
-};
 
-const rootElement = document.getElementById('app');
+const roots = [{
+    id : 'form', component : <Form />
+}];
 
-if (rootElement) {
-    ReactDOM.createRoot(rootElement).render(<App />);
-}
-
+roots.forEach(({ id, component }) => {
+    const element = document.getElementById(id);
+    if (element) {
+        ReactDOM.createRoot(element).render(component);
+    }
+});
