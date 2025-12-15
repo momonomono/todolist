@@ -29,6 +29,7 @@ services:
             - selenium
     phpmyadmin:
         image: 'phpmyadmin/phpmyadmin'
+        platform: linux/amd64
         ports:
             - '${FORWARD_PMA_PORT:-8080}:80'
         environment:
@@ -43,6 +44,7 @@ services:
         image: 'mysql/mysql-server:8.0'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
+        platform: linux/amd64
         environment:
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ROOT_HOST: '%'
