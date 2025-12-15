@@ -9,37 +9,8 @@
         background: #f5f2ec;
     }
 
-    &__sample {
-        &-form {
-            display: grid;
-            gap: 30px;
-        }
-    }
-
     &__content {
-        &-todolist {
-            position: relative;
-            width: min(1100px, 96vw);
-            max-width: 1180px;
-            min-height: 640px;
-            margin: 0 auto;
-            padding: 32px 36px 40px;
-            display: grid;
-            row-gap: 28px;
-            border-radius: 28px;
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            box-shadow:
-                0 18px 50px rgba(0, 0, 0, 0.08),
-                0 2px 10px rgba(0, 0, 0, 0.06),
-                inset 0 1px 0 rgba(255, 255, 255, 0.75);
-            overflow: hidden;
-
-            @media (max-width: 768px) {
-                padding: 24px 22px 32px;
-                row-gap: 20px;
-                border-radius: 22px;
-            }
-        }
+        display: grid;
+        gap: 30px;
     }
 }

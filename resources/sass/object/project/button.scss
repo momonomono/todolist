@@ -1,3 +1,9 @@
 .p-button {
-    
+    &__main {
+        width: 100px;
+        padding: 5px 0;
+        background: #ffb41e;
+        color: #ffffff;
+        border-radius: 5px;
+    }
 }

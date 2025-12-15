@@ -2,4 +2,8 @@
     .u-mt-#{$i} {
         margin-top: $i * 10px;
     }
+    
+    .u-mb-#{$i} {
+        margin-bottom: $i * 10px;
+    }
 }

@@ -1,10 +1,12 @@
 export default function labelForm({ label, type }) {
+    
+    
     return (
-        <div>
+        <div className="c-grid__content-sub">
             <label>{label}</label>
-            <input type={type} />
+            <input type={type} className="p-form__text" />
             <div>
-                <p>エラーメッセージ</p>
+                <p className="c-text__error">エラーメッセージ</p>
             </div>
         </div>
     )
