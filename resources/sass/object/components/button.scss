@@ -1,5 +1,7 @@
 .c-button {
     &__main {
+        display: inline-flex;
+        justify-self: center;
         padding: 10px 30px;
         border-radius: 5px;
         border: none;

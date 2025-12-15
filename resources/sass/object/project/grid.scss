@@ -9,6 +9,13 @@
         background: #f5f2ec;
     }
 
+    &__sample {
+        &-form {
+            display: grid;
+            gap: 30px;
+        }
+    }
+
     &__content {
         &-todolist {
             position: relative;
