@@ -2,25 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValiSampleRequest;
 use App\Models\TodoList;
 use Illuminate\Http\Request;
 
 
 class ApiController extends Controller
 {
-    public function getTodolist()
+    public function storeSample(ValiSampleRequest $request)
     {
-        $todos = TodoList::all();
-        return response()
-            ->json(['todos' => $todos]);
+        $validated = $request->validated();
+
+        // サンプルとして、バリデーション済みデータをそのまま返す
+        return response()->json([
+            'message' => 'Sample data stored successfully',
+            'data' => $validated,
+        ], 201);
     }
-    
-    public function createTodolist(Request $request)
-    {
-        $todos = TodoList::create([
-            'task' => $request->input('task'),
-        ]);
-        return response()
-            ->json(['todos' => $todos]);
-    }
-}
+}   
