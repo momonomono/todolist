@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ValiSampleRequest;
+use App\Models\Sample;
 use App\Models\TodoList;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,8 @@ class ApiController extends Controller
     public function storeSample(ValiSampleRequest $request)
     {
         $validated = $request->validated();
+
+        Sample::create($validated);
 
         // サンプルとして、バリデーション済みデータをそのまま返す
         return response()->json([

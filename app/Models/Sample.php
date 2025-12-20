@@ -8,10 +8,7 @@ class Sample extends Model
 {
     protected $table = 'samples';
 
-    protected $fillable = [
-        'task',
-        'is_completed',
-    ];
+    protected $guarded = [];
 
     public $timestamps = true;
 }

@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('samples', function (Blueprint $table) {
             $table->id();
-            $table->string('task');
-            $table->boolean('is_completed')->default(false);
+            $table->string('title');
+            $table->string('name');
+            $table->integer('quantity');
+            $table->text('description')->nullable();
+            $table->string('picture_path1')->nullable();
+            $table->string('picture_path2')->nullable();
             $table->timestamps();
         });
     }

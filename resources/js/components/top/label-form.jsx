@@ -1,4 +1,4 @@
-export default function labelForm({ label, formName, children }) {
+export default function labelForm({ label, formName, errorMsg="", children }) {
     
     
     return (
@@ -6,7 +6,7 @@ export default function labelForm({ label, formName, children }) {
             <label htmlFor={formName}>{label}</label>
             {children}
             <div>
-                <p className="c-text__error">エラーメッセージ</p>
+                <p className="c-text__error">{errorMsg}</p>
             </div>
         </div>
     )
