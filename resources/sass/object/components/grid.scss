@@ -11,7 +11,18 @@
         }
     }
 
+    &__container {
+        border: 1px solid #e5e7eb; 
+        border-radius: 12px; 
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        background:#fff;
+    }
 
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
 
     &__primary {
         display: flex;

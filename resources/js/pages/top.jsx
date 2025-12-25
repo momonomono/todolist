@@ -13,6 +13,7 @@ export default function Top() {
         'picture_path2': ''
     });
 
+    // フォーム変更の際の処理
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -21,6 +22,7 @@ export default function Top() {
         }));
     }
 
+    // 送信ボタンクリック時の処理
     const clickSubmit = async () => {
         setError({});  
 
@@ -74,7 +76,7 @@ export default function Top() {
             <LabelForm label="詳細" formName="description" errorMsg={error.description}>
                 <textarea onBlur={handleChange} name="description" className="p-form__text p-form__sub"></textarea>
             </LabelForm>
-
+            
             <ImagesGrid />
 
             <div className="c-grid__primary">

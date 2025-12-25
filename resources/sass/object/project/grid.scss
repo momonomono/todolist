@@ -13,4 +13,14 @@
         display: grid;
         gap: 30px;
     }
+
+    &__image {
+        width: 300px;
+        aspect-ratio:  16 / 9;
+        background: #b6b6b6;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
