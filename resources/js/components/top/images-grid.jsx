@@ -11,7 +11,7 @@ export default function ImagesGrid() {
         picture_path2: '',
     });
 
-    
+
     const handleChangeFile = (e) => {
         const input = e.currentTarget;
         const name = input.name;
@@ -49,6 +49,7 @@ export default function ImagesGrid() {
                                 className="p-image__sample-preview"
                                 src={imagePaths[field.name]}
                             />
+                            <p className="">✕</p>
                         </div>
                     ))}
                 </article>

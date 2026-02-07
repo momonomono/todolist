@@ -2,8 +2,10 @@ export default function labelForm({ label, formName, errorMsg="", children }) {
     
     
     return (
-        <div className="c-grid__content-sub">
-            <label htmlFor={formName}>{label}</label>
+        <div className="c-grid__container">
+            <label htmlFor={formName} >
+                <p>{label}</p>
+            </label>
             {children}
             <div>
                 <p className="c-text__error">{errorMsg}</p>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use App\Models\TodoList;
 use Illuminate\Http\Request;
 use App\Models\PigmentRecipe;
@@ -24,5 +25,22 @@ class MainController extends Controller
     {
 
         return view('learn');
+    }
+
+    public function like()
+    {
+        $likes = Like::all();
+        return view('like', compact('likes'));
+    }
+
+    public function postLike(Request $request)
+    {
+        
+        return view('like');
+    }
+
+    public function material()
+    {
+        return view('material');
     }
 }
