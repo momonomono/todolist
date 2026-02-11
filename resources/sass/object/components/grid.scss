@@ -24,9 +24,10 @@
         gap: 30px;
     }
 
-    &__primary {
+    &__centerd {
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     &__label {

@@ -27,6 +27,8 @@ export default function ImagesGrid() {
             }));
         };
         reader.readAsDataURL(file);
+
+        console.log(file);
     }
 
     return (
@@ -36,21 +38,8 @@ export default function ImagesGrid() {
 
             <div className="u-mt-4">
                 <article className="c-grid__list">
-                    {fields.map((field) => (
-                        <div className="p-grid__image" key={field.name}>
-                            <p>{field.label}</p>
-                            <input 
-                                type="file" className="p-form__file"
-                                name={field.name}
-                                onChange={handleChangeFile}
-                            />
-                            <img
-                                alt="アップロード画像プレビュー" 
-                                className="p-image__sample-preview"
-                                src={imagePaths[field.name]}
-                            />
-                            <p className="">✕</p>
-                        </div>
+                    {Object.values(imagePaths).map(() => (
+                        <ImageUploadItem />
                     ))}
                 </article>
             </div>
