@@ -1,5 +1,5 @@
 import LabelForm from '../components/top/label-form.jsx';
-import ImagesGrid from '../components/top/images-grid.jsx';
+import ImagesGrid from '../components/top/imageGrid.jsx';
 import { useState } from 'react';
 
 export default function Top() {

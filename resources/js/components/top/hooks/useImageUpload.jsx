@@ -1,4 +1,6 @@
-export function useImageUpload() {
+import { useState } from 'react';
+
+export default function useImageUpload() {
     const [ imagePaths, setImagePaths ] = useState({
         picture_path1: '',
         picture_path2: '',
@@ -24,5 +26,5 @@ export function useImageUpload() {
         console.log(file);
     }
 
-    
+    return { imagePaths, handleChangeFile };
 }

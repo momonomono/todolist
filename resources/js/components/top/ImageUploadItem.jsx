@@ -8,7 +8,11 @@ export default function ImageUploadItem({ label, imagePath, onChange }) {
                 name="image"
                 onChange={onChange}
             />
-            <img className="p-image__sample"/>
+            {
+                imagePath && (
+                    <img className="p-image__sample" src={imagePath} alt="プレビュー画像" />
+                )
+            }
         </label>
     )
 }
