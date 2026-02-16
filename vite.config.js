@@ -16,4 +16,9 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    resolve: {
+        alias: {
+            '@js': 'resources/js'
+        }
+    }
 });

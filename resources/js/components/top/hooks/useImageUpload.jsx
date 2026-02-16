@@ -22,8 +22,6 @@ export default function useImageUpload() {
             }));
         };
         reader.readAsDataURL(file);
-
-        console.log(file);
     }
 
     return { imagePaths, handleChangeFile };

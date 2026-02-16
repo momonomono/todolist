@@ -5,10 +5,9 @@ export default function ImagesGrid() {
     const { imagePaths, handleChangeFile } = useImageUpload();
 
     const fields = [
-        { key: 1, name: 'picture_path1', label: 'メイン画像' },
-        { key: 2, name: 'picture_path2', label: 'サブ画像' },
+        { key: 1, name: 'picture_path1' },
+        { key: 2, name: 'picture_path2' },
     ];
-    
 
     return (
         <section className="c-grid__container">
@@ -17,12 +16,12 @@ export default function ImagesGrid() {
 
             <div className="u-mt-4">
                 <article className="c-grid__list">
-                    {Object.values(imagePaths).map((imagePath, index) => (
+                    {Object.values(fields).map((field, index) => (
                         <ImageUploadItem
                             key={index}
-                            label={fields.label}
-                            imagePath={imagePath[fields.name]}
-                            onChangeFile={handleChangeFile}
+                            name={field.name}
+                            imagePath={imagePaths[field.name]}
+                            onChange={handleChangeFile}
                         />
                     ))}
                 </article>

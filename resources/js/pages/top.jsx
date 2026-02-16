@@ -1,6 +1,8 @@
-import LabelForm from '../components/top/label-form.jsx';
+import LabelForm from '../components/top/labelForm.jsx';
 import ImagesGrid from '../components/top/imageGrid.jsx';
 import { useState } from 'react';
+import useFormChange from '@js/componets/top/hooks/useFormChange.jsx';
+
 
 export default function Top() {
     const [ error, setError ] = useState({});
@@ -12,15 +14,7 @@ export default function Top() {
         'picture_path1': '',
         'picture_path2': ''
     });
-
-    // フォーム変更の際の処理
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    }
+    
 
     // 送信ボタンクリック時の処理
     const clickSubmit = async () => {
