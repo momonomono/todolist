@@ -11,24 +11,10 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function storeSample(ValiSampleRequest $request)
+    public function storeTop(Request $request)
     {
-        $validated = $request->validated();
+        $sample = new Sample();
 
-        Sample::create($validated);
-
-        // サンプルとして、バリデーション済みデータをそのまま返す
-        return response()->json([
-            'message' => 'Sample data stored successfully',
-            'data' => $validated,
-        ], 201);
-    }
-
-    public function getLikes()
-    {
-        $likes = Like::all();
-        return response()->json([
-            'likes' => $likes
-        ], 201);
+        return response()->json($request->all());
     }
 }   

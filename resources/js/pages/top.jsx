@@ -1,8 +1,7 @@
 import LabelForm from '../components/top/labelForm.jsx';
 import ImagesGrid from '../components/top/imageGrid.jsx';
+import ButtonForm from '@js/components/buttons/ButtonForm.jsx';
 import { useState } from 'react';
-import useFormChange from '@js/componets/top/hooks/useFormChange.jsx';
-
 
 export default function Top() {
     const [ error, setError ] = useState({});
@@ -14,69 +13,35 @@ export default function Top() {
         'picture_path1': '',
         'picture_path2': ''
     });
-    
-
-    // 送信ボタンクリック時の処理
-    const clickSubmit = async () => {
-        setError({});  
-
-        const res = await fetch('/api/top', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
-            },
-            body: JSON.stringify({
-                ...formData
-            })
-        });
-
-        if (res.status === 422) {
-            const data = await res.json();
-            setError(data.errors);
-            return;
-        }
-
-        if (!res.ok) {
-            const text = await res.text(); 
-            throw new Error(`Request failed: ${res.status} ${text}`);
-        }
-
-        setFormData({
-            'title': '',
-            'name': '',
-            'quantity':'',
-            'description':'',
-            'picture_path1': '',
-            'picture_path2': ''
-        })
-    };
+    const fields = [
+        { label: '品番', formName: 'title', errorMsg: error.title, type: 'text' },
+        { label: '現場名', formName: 'name', errorMsg: error.name, type: 'text' },
+        { label: '数量', formName: 'quantity', errorMsg: error.quantity, type: 'number' },
+        { label: '詳細', formName: 'description', errorMsg: error.description, type: 'textarea' }
+    ]
 
     return (
         <div className="u-mt-5 u-mb-5">
             <div className=" c-grid__content-main">
-                <LabelForm label="品番" formName="title" errorMsg={error.title}>
-                    <input type="text" onBlur={handleChange} name="title" className="p-form__text p-form__sub" />
-                </LabelForm>
 
-                <LabelForm label="現場名" formName="name" errorMsg={error.name}>
-                    <input type="text" onBlur={handleChange} name="name" className="p-form__text" />
-                </LabelForm>
-
-                <LabelForm label="数量" formName="quantity" errorMsg={error.quantity}>
-                    <input type="number" min="0" onBlur={handleChange} name="quantity" className="p-form__text p-form__sub" />
-                </LabelForm>
-
-                <LabelForm label="詳細" formName="description" errorMsg={error.description}>
-                    <textarea onBlur={handleChange} name="description" className="p-form__text p-form__detail"></textarea>
-                </LabelForm>
+                {Object.values(fields).map((field, index) => (
+                    <LabelForm 
+                        key={index}
+                        label={field.label}
+                        formName={field.formName}
+                        errorMsg={field.errorMsg}
+                        type={field.type}
+                        setFormData={setFormData}
+                    />
+                ))}
                 
                 <ImagesGrid />
 
-                <div className="c-grid__primary">
-                    <button className="p-button__main" onClick={clickSubmit} >送信</button>
-                </div>
+                <ButtonForm 
+                    formData={formData}
+                    setFormData={setFormData}
+                    setError={setError}
+                 />
             </div>
         </div>
     )

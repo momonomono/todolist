@@ -9,3 +9,5 @@ Route::get('/learn', [MainController::class, 'learn'])->name('learn');
 
 Route::get('/like', [MainController::class, 'like'])->name('like');
 Route::get('/material', [MainController::class, 'material'])->name('material');
+
+Route::get('/product', [MainController::class, 'showProduct'])->name('product');

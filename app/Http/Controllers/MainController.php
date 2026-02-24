@@ -43,4 +43,10 @@ class MainController extends Controller
     {
         return view('material');
     }
+
+    public function showProduct()
+    {
+        
+        return view('product');
+    }
 }

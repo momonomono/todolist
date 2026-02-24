@@ -40,4 +40,21 @@
         bottom: 5px;
         right: 5px;
     }
+
+    &__product {
+        &-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        &-amount {
+            display: flex;
+            gap: 50px;
+        }
+    }
+
+    &__label {
+        display: block grid;
+        gap: 10px;
+    }
 }
